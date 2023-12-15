@@ -29,5 +29,12 @@ fun CompanyInfoDto.toCompanyInfo(): CompanyInfo {
         country = country ?: "",
         industry = industry ?: "",
         sector = sector ?: "",
+        marketCapitalization = marketCapitalization ?: "",
+        ebitba = ebitba ?: "",
+        trailingPE = trailingPE ?: "",
+        forwardPE = forwardPE ?: "",
+        dividend = dividend ?: "",
+        dividendPer = dividendPer ?: "",
+        dividendDate = dividendDate ?: "",
     )
 }

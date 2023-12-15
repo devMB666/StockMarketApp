@@ -38,7 +38,7 @@ fun CompanyInfoScreen(
                 Text(
                     text = company.name,
                     fontWeight = FontWeight.Bold,
-                    fontSize = 18.sp,
+                    fontSize = 26.sp,
                     overflow = TextOverflow.Ellipsis,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -46,7 +46,7 @@ fun CompanyInfoScreen(
                 Text(
                     text = company.symbol,
                     fontStyle = FontStyle.Italic,
-                    fontSize = 14.sp,
+                    fontSize = 18.sp,
                     modifier = Modifier.fillMaxWidth()
                 )
                 Spacer(modifier = Modifier.height(8.dp))
@@ -57,14 +57,14 @@ fun CompanyInfoScreen(
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = "Industry: ${company.industry}",
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     modifier = Modifier.fillMaxWidth(),
                     overflow = TextOverflow.Ellipsis
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = "Country: ${company.country}",
-                    fontSize = 14.sp,
+                    fontSize = 16.sp,
                     modifier = Modifier.fillMaxWidth(),
                     overflow = TextOverflow.Ellipsis
                 )
@@ -76,13 +76,87 @@ fun CompanyInfoScreen(
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
                     text = company.description,
-                    fontSize = 12.sp,
+                    fontSize = 14.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Sector: ${company.sector}",
+                    fontSize = 16.sp,
                     modifier = Modifier.fillMaxWidth(),
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = company.sector,
-                    fontSize = 12.sp,
+                    text = "Capitalization: ${company.marketCapitalization}$",
+                    fontSize = 16.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "MULTIPLE",
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.CenterHorizontally)
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "EBITBA: ${company.ebitba} $",
+                    fontSize = 18.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Trailing PE: ${company.trailingPE}",
+                    fontSize = 18.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Forward PE: ${company.forwardPE}",
+                    fontSize = 18.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "DIVIDEND",
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .align(Alignment.CenterHorizontally)
+                )
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Dividend Per Share: ${company.dividend} $",
+                    fontSize = 18.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Dividend Yield: ${company.dividendPer} %",
+                    fontSize = 18.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Date: ${company.dividendDate}",
+                    fontSize = 18.sp,
                     modifier = Modifier.fillMaxWidth(),
                 )
             }
