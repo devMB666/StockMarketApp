@@ -1,6 +1,8 @@
 package com.plcoding.stockmarketapp.presentation.company_listings
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -8,10 +10,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.accompanist.swiperefresh.SwipeRefresh
@@ -41,7 +46,7 @@ fun CompanyListingsScreen(
                 )
             },
             modifier = Modifier
-                .padding(16.dp)
+                .padding(20.dp)
                 .fillMaxWidth(),
             placeholder = {
                 Text(text = "Search...")
@@ -60,20 +65,27 @@ fun CompanyListingsScreen(
             ) {
                 items(state.companies.size) { i ->
                     val company = state.companies[i]
-                    CompanyItem(
-                        company = company,
+                    Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable {
-                                navigator.navigate(
-                                    CompanyInfoScreenDestination(company.symbol)
-                                )
-                            }
-                            .padding(16.dp)
-                    )
+                            .background(MaterialTheme.colors.primary)
+                    ) {
+
+                        CompanyItem(
+                            company = company,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    navigator.navigate(
+                                        CompanyInfoScreenDestination(company.symbol)
+                                    )
+                                }
+                                .padding(16.dp)
+                        )
+                    }
                     if(i < state.companies.size) {
                         Divider(modifier = Modifier.padding(
-                            horizontal = 16.dp
+                            horizontal = 18.dp
                         ))
                     }
                 }
